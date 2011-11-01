@@ -1,0 +1,54 @@
+###############################################################################
+# WINDOWS.CFG - SAMPLE CONFIG FILE FOR MONITORING A WINDOWS MACHINE
+#
+# Last Modified: 06-13-2007
+#
+# NOTES: This config file assumes that you are using the sample configuration
+#	 files that get installed with the Nagios quickstart guide.
+#
+###############################################################################
+
+
+
+
+###############################################################################
+###############################################################################
+#
+# HOST DEFINITIONS
+#
+###############################################################################
+###############################################################################
+
+# Define a host for the Windows machine we'll be monitoring
+# Change the host_name, alias, and address to fit your situation
+
+<<host_list>>
+
+###############################################################################
+###############################################################################
+#
+# HOST GROUP DEFINITIONS
+#
+###############################################################################
+###############################################################################
+
+
+# Define a hostgroup for Windows machines
+# All hosts that use the windows-server template will automatically be a member of this group
+
+<<hostgroup_list>>
+
+###############################################################################
+###############################################################################
+#
+# SERVICE DEFINITIONS
+#
+###############################################################################
+###############################################################################
+
+
+# Create a service for monitoring the version of NSCLient++ that is installed
+# Change the host_name to match the name of the host you defined above
+
+
+<<service_list>>
