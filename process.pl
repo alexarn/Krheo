@@ -24,7 +24,7 @@ my $todo = Krheo::Utils::to_do($infos_file);
 
 my $config = Krheo::File->in($config_file);
 
-open( TMPL, "<$tmpl" ) || die "could not open $tmpl for reading: $!";
+open( TMPL, "<$template_file" ) || die "could not open $template_file for reading: $!";
 my $new;
 while (<TMPL>) {
     $new .= $_;
@@ -37,4 +37,7 @@ foreach my $type_list ( keys %$config ) {
 
     $new =~ s/<<$type_list>>/$content/;
 }
-print $new;
+
+open (FH, ">$config_file");
+print FH $new;
+close (FH);
