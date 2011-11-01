@@ -6,10 +6,19 @@ use Krheo::File;
 use Krheo::Utils;
 use Symbol;
 use Data::Dumper;
+use Getopt::Long;
 
-my $infos_file = "/home/alex/nico/infos";
-my $tmpl = "/home/alex/nico/Krheo/tmpl/nagios.tmpl";
-my $config_file = "/home/alex/nico/windows.cfg";
+my ( $infos_file, $config_file, $template_file );
+
+GetOptions (
+    'infos|i=s' => \$infos_file,
+    'conf|c=s' => \$config_file,
+    'template|t=s' => \$template_file,
+);
+
+if ( !$infos_file || !$config_file || !$template_file ) {
+    die "missing argument";
+}
 
 my $todo = Krheo::Utils::to_do($infos_file);
 
