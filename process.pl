@@ -20,6 +20,8 @@ if ( !$infos_file || !$config_file || !$template_file ) {
     die "missing argument";
 }
 
+die "$infos_file doesn't exist. Nothing to do today :)" unless (-e $infos_file);
+
 my $todo = Krheo::Utils::to_do($infos_file);
 
 my $config = Krheo::File->in($config_file);
