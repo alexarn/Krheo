@@ -20,7 +20,7 @@ sub to_do {
 	{ key => "host_name", val => $hostname },
 	{ key => "alias", val => $hostname },
 	{ key => "address", val => $ip },
-	{ key => "hostgroups", val => "windows-server" },
+	{ key => "hostgroups", val => "windows-servers" },
     ];
 
     push @{ $todo->{host_list} }, $obj;
